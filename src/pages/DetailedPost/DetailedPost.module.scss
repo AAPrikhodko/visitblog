@@ -1,0 +1,169 @@
+.detailed_post_wrapper {
+  padding: 50px 100px 100px 100px;
+
+  @media (max-width: 540px) {
+    padding: 20px;
+  }
+
+  .content_wrapper {
+    display: flex;
+
+    @media (max-width: 1240px) {
+      flex-direction: column;
+
+      :global .ant-image {
+        align-self: center;
+      }
+    }
+
+    .image {
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      height: 100%;
+      width: 25vw;
+
+      @media (max-width: 1240px) {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+    }
+
+    .card_description {
+      border: none;
+      width: 55vw;
+      background-color: lightyellow;
+
+      @media (max-width: 1240px) {
+        width: 100%;
+        height: 400px;
+        border-radius: 10px;
+        margin: 5px 0;
+      }
+
+      :global .ant-card-head {
+        text-align: center;
+      }
+
+      :global .ant-card-body {
+        display: flex;
+        flex-direction: column;
+        height: 80%;
+
+        :first-child {
+          flex-grow: 1;
+         }
+      }
+
+      .text_area {
+        height: 120px;
+        resize: none;
+        border-radius: 10px;
+      }
+
+      input {
+        height: 120px;
+        resize: none;
+      }
+
+      .published {
+        padding-top: 15px;
+      }
+    }
+
+    .card_author {
+      border: none;
+      width: 15vw;
+      background-color: lightyellow;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+      border-left: 1px dashed grey;
+      text-align: center;
+
+      @media (max-width: 1240px) {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+
+        :global .ant-card-body {
+          display: flex;
+          justify-content: center;
+        }
+      }
+
+      .image_avatar {
+        border-radius: 10px;
+
+        @media (max-width: 1240px) {
+          margin-right: 10px;
+          width: auto;
+          height: 100%;
+          align-self: center;
+        }
+      }
+
+      .author_text_info {
+        @media (max-width: 1240px) {
+          margin-left: 10px;
+        }
+      }
+
+      .title {
+        padding-top: 20px;
+      }
+    }
+
+    .comment {
+      border-radius: 10px;
+    }
+
+    .author_avatar {
+      width: 100px;
+    }
+  }
+
+  .tags_wrapper {
+    padding-top: 15px;
+  }
+
+  .buttons_wrapper{
+    text-align: center;
+    padding: 0 100px 50px;
+    display: flex;
+    justify-content: space-between;
+    :hover, :visited, :focus {
+      color: white;
+    }
+
+    @media (max-width: 740px) {
+      padding: 0 20px 50px;
+    }
+
+    .action_button {
+      width: 260px;
+      letter-spacing: 2px;
+      margin: 0 10px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-color: white;
+      border-radius: 10px;
+      :hover, :visited, :focus {
+        color: white;
+      }
+    }
+  }
+}
+
+.comment_button {
+  width: 260px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  border-radius: 10px;
+  background-color: lightskyblue;
+  border: none;
+  color: black;
+
+  :hover, :visited, :focus {
+    color: white;
+  }
+}

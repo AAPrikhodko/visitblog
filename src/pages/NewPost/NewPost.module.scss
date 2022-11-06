@@ -1,0 +1,70 @@
+.new_post_title {
+  font: 500 20px "Merriweather";
+  text-align: center;
+  letter-spacing: 2px;
+  color: rgb(255, 255, 255, 0.5);
+}
+
+.new_post_content_wrapper {
+  padding: 30px 100px;
+  text-align: center;
+
+  @media (max-width: 540px) {
+    padding: 30px 20px;
+  }
+
+  .image {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 30vw;
+    height: 500px;
+
+    @media (max-width: 1440px) {
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+  }
+
+  .text_area {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 500px;
+    width: 55vw;
+    resize: none;
+
+    @media (max-width: 1440px) {
+      border-radius: 10px;
+      width: 100%;
+      height: 300px;
+    }
+  }
+}
+
+.button_wrapper {
+  padding: 10px 200px;
+  text-align: right;
+
+  @media (max-width: 1440px) {
+    text-align: center;
+    padding: 0;
+  }
+
+  :hover, :visited, :focus {
+    color: white;
+  }
+
+  .button_save {
+    width: 260px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-color: white;
+    border-radius: 10px;
+    :hover, :visited, :focus {
+      color: white;
+    }
+  }
+}
+
+

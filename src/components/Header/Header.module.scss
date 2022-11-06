@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Merriweather:ital,wght@0,300;1,400&display=swap');
+
+.header_wrapper {
+  margin: 10px 30px;
+  opacity: 0.8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: aliceblue;
+
+  @media (max-width: 520px) {
+    margin: 10px 10px;
+  }
+
+  .header_logo {
+    padding: 15px;
+  }
+
+  .header_text_group {
+    text-align: center;
+    padding-left: 140px;
+
+   @media (max-width: 992px) {
+    padding-left: 0;
+  }
+
+    .header_text_group_title {
+      padding-left: 80px;
+      font: 400 20px "Josefin+Sans";
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      
+      @media (max-width: 675px) {
+        padding-left: 0;
+      }
+    }
+
+    .header_text_group_description {
+      align-self: end;
+      margin-bottom: 20px;
+      flex-grow: 1;
+      font: 500 20px "Merriweather";
+      letter-spacing: 0.5px;
+      text-transform: lowercase;
+      text-align: center;
+    }
+  }
+
+  .header_button_group {
+    padding-right: 50px;
+    :hover{
+      color: white;
+    }
+
+    .button_create {
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 600;
+      border-color: white;
+      border-radius: 10px;
+      margin: 8px;
+      :hover{
+        color: white;
+      }
+    }
+
+    .avatar {
+      text-transform: uppercase;
+      font-family: "Merriweather", serif;
+      margin-left: 50px;
+      color: black;
+      background-color: lightyellow;
+      :hover{
+        color: black;
+      }
+
+      @media (max-width: 992px) {
+        margin-left: 0;
+        align-self: center;
+      }
+
+    }
+    
+    @media (max-width: 992px) {
+      display: flex;
+      flex-direction: column-reverse;
+      padding-right: 10px;
+    }
+  }
+}
+

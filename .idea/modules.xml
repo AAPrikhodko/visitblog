@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/visionblog.iml" filepath="$PROJECT_DIR$/visionblog.iml" />
+      <module fileurl="file://$PROJECT_DIR$/visitblog.iml" filepath="$PROJECT_DIR$/visitblog.iml" />
     </modules>
   </component>
 </project>

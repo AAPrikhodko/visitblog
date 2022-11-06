@@ -1,0 +1,13 @@
+@import '~antd/dist/antd.css';
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: url("img/bg.jpg") no-repeat fixed;
+  background-size: cover;
+}
+
+.content{
+  flex:1;
+}

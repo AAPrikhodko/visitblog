@@ -1,0 +1,33 @@
+.post_wrapper {
+
+  .postcard {
+    background-color: lightyellow;
+    border-radius: 10px;
+    overflow: hidden;
+    border: none;
+
+    .post_wrapper_img {
+      object-fit: cover;
+      height: 150px;
+    }
+
+    .statistic {
+      :global .ant-statistic-content {
+        font-size: 14px;
+        &:hover{
+          cursor: auto;
+        }
+      }
+    }
+
+    .tags_wrapper {
+      padding-top: 15px;
+      text-align: center;
+      width: 100%;
+
+      .tag {
+        margin: 5px;
+      }
+    }
+  }
+}
