@@ -1,30 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import style from './Home.module.scss'
-import { PostDataService } from "../../api/apiPostClient";
 import { List } from "antd";
 import { Post } from "../../services/types";
-import { AxiosResponse } from "axios";
 import PostCard from "../../components/PostCard/PostCard";
+import {useGetPosts} from "../../hooks/postHooks";
 
 
 const Home = () => {
-    const [posts, setPosts] = useState<Post[]>([])
 
-    useEffect(() => {
-        PostDataService.getList().then((posts: AxiosResponse) => setPosts(posts.data.data))
-    },[])
+    const { isLoadingPosts, posts} = useGetPosts()
 
     return (
-        <List
-            className={style.posts_wrapper}
-            grid={{ gutter: 25, column: 1, md: 2, lg:3, xl: 4, xxl: 4}}
-            dataSource={posts}
-            renderItem={item => (
-                <List.Item>
-                    <PostCard post={item}/>
-                </List.Item>
-            )}
-        />
+        isLoadingPosts
+            ? <></>
+            : <List
+                className={style.posts_wrapper}
+                grid={{ gutter: 25, column: 1, md: 2, lg:3, xl: 4, xxl: 4}}
+                dataSource={posts}
+                renderItem={(item: Post) => (
+                    <List.Item>
+                        <PostCard post={item}/>
+                    </List.Item>
+                )}
+              />
     )
 }
 

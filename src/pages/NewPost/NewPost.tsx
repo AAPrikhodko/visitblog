@@ -3,7 +3,8 @@ import styles from './NewPost.module.scss'
 import { Image, Button, Input, notification } from 'antd';
 import { useNavigate } from "react-router-dom";
 import { PostDataService } from "../../api/apiPostClient";
-import { buttonCaption, constants } from "../../services/constants";
+import {buttonCaption, constants, QueryKeys} from "../../services/constants";
+import {useMutation} from "react-query";
 
 const { TextArea } = Input;
 
@@ -12,14 +13,20 @@ const NewPost = () => {
     const [text, setText] = useState('')
     const navigate = useNavigate()
 
-    const createPostClickHandler = (text: string, image: string) => {
-        PostDataService.createPost(text, image).then(() => {
-            navigate('/')
-            notification.success({
-                message: constants.notificationCreate
-            })
-        })
-    }
+    const createPostMutate = useMutation(
+        `${QueryKeys.CreatePost}`,
+        () => PostDataService.createPost(text, "https://picsum.photos/500/500"),
+        {
+            onSuccess: () => {
+                navigate('/')
+                notification.success({
+                    message: constants.notificationCreate
+                })
+            }
+        }
+    )
+
+    const createPostClickHandler = () => createPostMutate.mutate()
 
   return (
       <>
@@ -34,7 +41,7 @@ const NewPost = () => {
               />
           </div>
           <div className={styles.button_wrapper}>
-              <Button type="primary" className={styles.button_save} onClick={() => createPostClickHandler(text, 'https://picsum.photos/500/500')}>
+              <Button type="primary" className={styles.button_save} onClick={createPostClickHandler}>
                   {buttonCaption.savePost}
               </Button>
           </div>

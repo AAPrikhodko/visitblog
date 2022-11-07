@@ -30,3 +30,13 @@ export const constants = {
     PageNotFoundText: "The page you requested could not be found",
     newPostPlaceholder: "Type you story here"
 }
+
+export enum QueryKeys {
+    GetPosts = "get_posts",
+    GetPostById = "get_post_by_id",
+    GetCommentsByPost = "get_comments_by_post",
+    AddComment = "add_comment",
+    UpdatePost = "update_post",
+    DeletePost = "delete_post",
+    CreatePost = "create_post"
+}

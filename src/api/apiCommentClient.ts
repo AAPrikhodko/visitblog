@@ -8,11 +8,13 @@ const headers = {
 }
 
 export const CommentDataService = {
-    async getCommentsByPost(id: string) {
+    async getCommentsByPost(id?: string) {
+        if (!id) return
         return axios.get(`/post/${id}/comment`, {headers: headers})
     },
 
-    async createComment(message: string, post: string) {
+    async createComment(message: string, post?: string) {
+        if (!post) return
         return axios.post(
             `/comment/create`,
             {

@@ -12,7 +12,8 @@ export const PostDataService = {
         return axios.get(`/post`, {headers: headers})
     },
 
-    async getPostById(id: string) {
+    async getPostById(id?: string) {
+        if (!id) return
         return axios.get(`/post/${id}`, {headers: headers})
     },
 
@@ -29,7 +30,8 @@ export const PostDataService = {
         )
     },
 
-    async updatePost(postId: string, text: string) {
+    async updatePost(postId?: string, text?: string) {
+        if (!postId || !text) return
         return axios.put(
             `/post/${postId}`,
             {
@@ -41,7 +43,8 @@ export const PostDataService = {
         )
     },
 
-    async deletePost(postId: string) {
+    async deletePost(postId?: string) {
+        if (!postId) return
         return axios.delete(
             `/post/${postId}`,
             {headers: headers}
